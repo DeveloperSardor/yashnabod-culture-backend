@@ -23,12 +23,11 @@ app.get('/favicon.ico', (req, res)=>{
 })
 // CORS sozlamalari
 const corsOptions = { 
-    origin: config.allowedDomains,
-    credentials: true,
-    optionsSuccessStatus: 200
+    origin: ['http://localhost:5173', 'http://client.yashnabodmadaniyat.uz']
+    credentials: true
 };
 
-app.use(cors('*'));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
