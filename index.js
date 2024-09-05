@@ -23,7 +23,7 @@ app.get('/favicon.ico', (req, res)=>{
 })
 // CORS sozlamalari
 const corsOptions = { 
-    origin: ['http://localhost:5173', 'http://client.yashnabodmadaniyat.uz']
+    origin: ['http://localhost:5173', 'http://client.yashnabodmadaniyat.uz'],
     credentials: true
 };
 
