@@ -22,10 +22,15 @@ app.get('/favicon.ico', (req, res)=>{
     res.sendFile(path.join(__dirname, 'public', 'favicon.ico'))
 })
 // CORS sozlamalari
-const corsOptions = { 
-    origin: ['http://localhost:5173', 'http://client.yashnabodmadaniyat.uz'],
-    credentials: true
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://client.yashnabodmadaniyat.uz'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add methods as needed
+  allowedHeaders: ['Content-Type', 'Authorization'], // Add necessary headers
+  credentials: true // If cookies or HTTP authentication are required
 };
+
+
+
 
 app.use(cors(corsOptions));
 app.use(express.json());
