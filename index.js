@@ -25,7 +25,7 @@ app.get('/favicon.ico', (req, res)=>{
 const corsOptions = {
   origin: ['http://localhost:5173', 'https://client.yashnabodmadaniyat.uz', 'http://localhost:5174', 'https://admin.yashnabodmadaniyat.uz', 'http://localhost:5175', 'https://teacher.yashnabodmadaniyat.uz'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add methods as needed
-  allowedHeaders: ['Content-Type', 'Authorization'], // Add necessary headers
+  allowedHeaders: ['Content-Type', 'Authorization', 'token'], // Add necessary headers
   credentials: true // If cookies or HTTP authentication are required
 };
 
