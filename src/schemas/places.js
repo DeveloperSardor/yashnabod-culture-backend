@@ -16,9 +16,7 @@ type : {
     enum : ["Ko'ngil ochar istirohat bog'lari", "Madaniy meroslar"]
 },
 link : {
-    type : {
-        String,
-    }
+    type : String
 }
 }, {
     timestamps : true
