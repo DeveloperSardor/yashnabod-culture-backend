@@ -14,6 +14,11 @@ desc : {
 type : {
     type : String,
     enum : ["Ko'ngil ochar istirohat bog'lari", "Madaniy meroslar"]
+},
+link : {
+    type : {
+        String,
+    }
 }
 }, {
     timestamps : true
