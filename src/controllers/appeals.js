@@ -39,11 +39,12 @@ export class AppealContr{
                     data : await AppealSchema.findById(id)
                 })
             }else{
+const appeals = await AppealSchema.find().populate('group').sort({ _id: -1 });
                 res.send({
                     status : 200,
                     message : "Arizalar",
                     success : true,
-                    data : await AppealSchema.find().populate('group').sort({ createdAt : -1 })
+                    data : appeals
                 })
             }
         } catch (error) {
