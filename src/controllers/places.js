@@ -69,12 +69,13 @@ export class PlacesContr {
        if(file && file.mimetype.split('/')[0]!=="image"){
           throw new Error(`Siz faqat rasm yuklay olasiz!`)
       }
-      const { title, desc } = req.body;
-      if (!title || !file || !desc) {
+      const { title, desc, link } = req.body;
+      if (!title || !file || !desc || !link) {
         throw new Error(`Madaniy meros malumotlari talab qilinadi`);
       }
       const added = await PlaceSchema.create({
         title,
+        link,
         img : file.destination + file.originalname,
         desc,
         type: "Madaniy meroslar",
@@ -96,14 +97,15 @@ export class PlacesContr {
        if(file && file.mimetype.split('/')[0]!=="image"){
           throw new Error(`Siz faqat rasm yuklay olasiz!`)
       }
-      const { title, desc } = req.body;
-      if (!title || !file || !desc) {
+      const { title, desc, link } = req.body;
+      if (!title || !file || !desc || !link) {
         throw new Error(
           `Barcha malumotlar talab qilinadi`
         );
       }
       const added = await PlaceSchema.create({
         title,
+        link,
         img : file.destination + file.originalname,
         desc,
         type: "Ko'ngil ochar istirohat bog'lari",
@@ -137,13 +139,13 @@ export class PlacesContr {
                 }
             })
     }
-      const { title, desc } = req.body;
-      if (!title && !file && !desc) {
+      const { title, desc, link } = req.body;
+      if (!title && !file && !desc && !link) {
         throw new Error(`O'zgartirish uchun malumot yuboring!`);
       }
       const updated = await PlaceSchema.findByIdAndUpdate(
         id,
-        { title, img : file ? file.destination + file.originalname : findById.img, desc },
+        { title, img : file ? file.destination + file.originalname : findById.img, desc, link },
         { new: true }
       );
       res.send({
