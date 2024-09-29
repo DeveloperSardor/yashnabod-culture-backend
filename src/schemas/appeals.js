@@ -30,6 +30,8 @@ const AppealSchema = new Schema({
  message : {
     type : String
  }
+}, {
+timestamps : true
 });
 
 
